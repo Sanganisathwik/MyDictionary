@@ -19,7 +19,7 @@ export default function Navigation() {
   const isWords = pathname.startsWith("/words");
 
   return (
-    <AppBar position="static" sx={{ mb: 0 }}>
+    <AppBar position="static" sx={{ mb: 0, bgcolor: "#1e40af" }}>
       <Container maxWidth="lg">
         <Toolbar sx={{ gap: 2 }}>
           <MenuBookIcon sx={{ fontSize: 32 }} />
@@ -35,6 +35,13 @@ export default function Navigation() {
               color={isHome ? "secondary" : "inherit"}
               variant={isHome ? "outlined" : "text"}
               onClick={() => router.push("/")}
+              sx={{
+                color: "white",
+                borderColor: isHome ? "#ff8c42" : "transparent",
+                "&:hover": {
+                  bgcolor: "rgba(255, 255, 255, 0.1)",
+                },
+              }}
             >
               Search
             </Button>
@@ -42,6 +49,13 @@ export default function Navigation() {
               color={isWords ? "secondary" : "inherit"}
               variant={isWords ? "outlined" : "text"}
               onClick={() => router.push("/words")}
+              sx={{
+                color: "white",
+                borderColor: isWords ? "#ff8c42" : "transparent",
+                "&:hover": {
+                  bgcolor: "rgba(255, 255, 255, 0.1)",
+                },
+              }}
             >
               Words
             </Button>
