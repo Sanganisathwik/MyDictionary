@@ -63,6 +63,10 @@ Fill in these settings:
 - **Start Command**: `npm start`
 - **Instance Type**: Free
 
+**CRITICAL**: Make sure both Build Command and Start Command are set correctly:
+- Build Command MUST include `npm run build` to compile TypeScript
+- Start Command MUST be `npm start` (NOT `node index.js`)
+
 ### 3. Add Environment Variables
 Click **Advanced** → **Add Environment Variable**
 
