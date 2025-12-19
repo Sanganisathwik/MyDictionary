@@ -11,7 +11,16 @@ dotenv.config();
 const startServer = async () => {
   try {
     // Connect to MongoDB
-    const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/dictionary';
+    const MONGODB_URI = process.env.MONGODB_URI;
+    
+    if (!MONGODB_URI) {
+      console.error('❌ MONGODB_URI environment variable is not set!');
+      console.error('Please set MONGODB_URI in your Render environment variables.');
+      console.error('Get your connection string from: https://cloud.mongodb.com');
+      process.exit(1);
+    }
+    
+    console.log('🔗 Connecting to MongoDB...');
     await mongoose.connect(MONGODB_URI);
     console.log('✅ Connected to MongoDB');
 
