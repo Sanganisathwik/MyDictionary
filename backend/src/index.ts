@@ -33,6 +33,7 @@ const startServer = async () => {
         'http://localhost:3001', 
         'http://localhost:3002',
         'http://localhost:3003',
+        'https://mydictionary-1.onrender.com',
         process.env.FRONTEND_URL || 'http://localhost:3000'
       ],
       credentials: true,
