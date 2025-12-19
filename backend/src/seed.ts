@@ -94,6 +94,15 @@ const mockWords = [
     phonetic: "/ˈeləkwəns/",
     synonyms: ["articulateness", "fluency", "expressiveness"],
     antonyms: ["inarticulateness", "ineloquence"]
+  },
+  {
+    word: "Ethereal",
+    partOfSpeech: "Adjective",
+    definitions: ["Extremely delicate and light in a way that seems too perfect for this world."],
+    examples: ["Her ethereal beauty captivated everyone in the room."],
+    phonetic: "/ɪˈθɪərɪəl/",
+    synonyms: ["delicate", "exquisite", "dainty", "graceful", "heavenly"],
+    antonyms: ["substantial", "earthly", "tangible", "heavy"]
   }
 ];
 

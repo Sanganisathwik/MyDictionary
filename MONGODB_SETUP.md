@@ -17,7 +17,7 @@
 1. Go to **Database Access** (left sidebar)
 2. Click **Add New Database User**
 3. Authentication Method: **Password**
-4. Username: `mydictionary_user`
+4. Username: `dictionary`
 5. Password: Click **Autogenerate Secure Password** and **COPY IT**
    - Example: `Abc123Xyz789!@#`
 6. Database User Privileges: **Read and write to any database**
