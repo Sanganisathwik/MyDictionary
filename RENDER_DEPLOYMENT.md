@@ -57,15 +57,16 @@ Fill in these settings:
 - **Name**: `mydictionary-backend`
 - **Region**: Choose closest region
 - **Branch**: `main`
-- **Root Directory**: `backend`
+- **Root Directory**: Leave blank (deploy from root)
 - **Runtime**: `Node`
 - **Build Command**: `npm install && npm run build`
 - **Start Command**: `npm start`
 - **Instance Type**: Free
 
-**CRITICAL**: Make sure both Build Command and Start Command are set correctly:
-- Build Command MUST include `npm run build` to compile TypeScript
-- Start Command MUST be `npm start` (NOT `node index.js`)
+**CRITICAL**: 
+- Leave Root Directory BLANK - the scripts handle navigation to backend
+- Build Command: `npm install && npm run build`
+- Start Command: `npm start`
 
 ### 3. Add Environment Variables
 Click **Advanced** → **Add Environment Variable**
