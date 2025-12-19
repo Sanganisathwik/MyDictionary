@@ -43,6 +43,39 @@ const startServer = async () => {
       typeDefs, 
       resolvers,
       context: ({ req }) => ({ req }),
+      introspection: true, // Enable introspection in production
+      plugins: [
+        // Enable GraphQL Playground in production
+        {
+          async serverWillStart() {
+            return {
+              async renderLandingPage() {
+                const html = `
+                  <!DOCTYPE html>
+                  <html>
+                  <head>
+                    <meta charset="utf-8" />
+                    <title>MyDictionary GraphQL</title>
+                    <style>body { margin: 0; }</style>
+                  </head>
+                  <body>
+                    <div id="root"></div>
+                    <script src="https://embeddable-sandbox.cdn.apollographql.com/_latest/embeddable-sandbox.umd.production.min.js"></script>
+                    <script>
+                      new window.EmbeddedSandbox({
+                        target: '#root',
+                        initialEndpoint: '/graphql',
+                      });
+                    </script>
+                  </body>
+                  </html>
+                `;
+                return { html };
+              },
+            };
+          },
+        },
+      ],
     });
     
     await server.start();
