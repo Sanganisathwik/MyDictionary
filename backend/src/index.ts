@@ -26,17 +26,10 @@ const startServer = async () => {
 
     const app = express();
     
-    // Enable CORS
+    // Enable CORS - Allow all origins (including Vercel)
     app.use(cors({
-      origin: [
-        'http://localhost:3000',
-        'http://localhost:3001', 
-        'http://localhost:3002',
-        'http://localhost:3003',
-        'https://mydictionary-1.onrender.com',
-        process.env.FRONTEND_URL || 'http://localhost:3000'
-      ],
-      credentials: true,
+      origin: "*",           // This allows Vercel (and everyone) to connect
+      credentials: true,     // This allows headers/cookies to pass through
     }));
 
     // Create Apollo Server
